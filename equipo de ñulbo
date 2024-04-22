@@ -6,12 +6,17 @@ class jugador_de_futbol:
     self.partidos = partidos
     self.premios = premios
 
+
+  
   def actualizar_premios(
       self
   ):  #profe, no se por que no me pide el input cuando inicio el programa
     premios_in = int(input(f"¿Cuántos premios de {self.nombre} "))
     self.premios += premios_in
 
+
+
+  
   def actualizar_partidos(
       self
   ):  #profe, no se por que no me pide el input cuando inicio el programa
@@ -22,6 +27,8 @@ class jugador_de_futbol:
       )
     self.partidos += partidos_in
 
+
+  
   def actualizar_goles(
       self
   ):  #profe, no se por que no me pide el input cuando inicio el programa
@@ -29,6 +36,9 @@ class jugador_de_futbol:
 
     self.goles += goles_in
 
+
+
+  
   def mostrar_info_total(self):
     print(f"Jugador = {self.nombre}")
     print(f"partidos = {self.partidos}")
@@ -42,7 +52,36 @@ roñaldi = jugador_de_futbol("ronaldo", 0, 0, 0)
 
 #hay alguna forma de que se auto copmplete con los objetos totales que hay en una clase? en vez de poner manualmente ñessi.actualizar_goles() ronaldo.actualizar_goles().... parece insustentable en una escala mas grande
 
-ñessi.actualizar_goles()
+
+
+def menu():
+  print("que quieres hacer,presiona 1 para seleccionar a messi, 2 para ronaldo")
+
+  seleccionador_jugador = int(input(""))
+  if seleccionador_jugador == "1" :
+     print("bien, has seleccionado a messi, ahora que quieres hacer?")
+     print("presiona 1 para editar lo goles, 2 para los partidos")
+     print(" y 3 para los premios y 4 para ver su info general")
+       seleccionador_opcion = int(input(""))
+  
+  if seleccionador_opcion =="1":
+      print(f"los goles de messi son {ñessi.goles}")
+      print("no agregue la cant de goles totales, solo los nuevos")
+      print("si es su primera vez, agregue todos los goles que tiene en la actualidad")
+      ñessi.actualizar_goles()
+      if seleccionador_opcion =="4":
+      menu_return=input("ok, entonces quieres ver la info de messi, eso es corecto? 1=si 0=no")
+         if menu_return=="1":
+        print("muy bien, entonces quieres ver su info en general, aqui tienes") 
+            ñessi.mostrar_info_total()
+        else 
+           menu()
+     
+      
+
+
+
+
 ñessi.actualizar_partidos()
 ñessi.actualizar_premios()
 
@@ -50,5 +89,5 @@ roñaldi.actualizar_goles()
 roñaldi.actualizar_partidos()
 roñaldi.actualizar_premios()
 
-ñessi.mostrar_info_total()
+
 roñaldi.mostrar_info_total()
