@@ -1,0 +1,54 @@
+class jugador_de_futbol:
+
+  def __init__(self, nombre, partidos, goles, premios):
+    self.nombre = nombre
+    self.goles = goles
+    self.partidos = partidos
+    self.premios = premios
+
+  def actualizar_premios(
+      self
+  ):  #profe, no se por que no me pide el input cuando inicio el programa
+    premios_in = int(input(f"¿Cuántos premios de {self.nombre} "))
+    self.premios += premios_in
+
+  def actualizar_partidos(
+      self
+  ):  #profe, no se por que no me pide el input cuando inicio el programa
+    partidos_in = int(input(f"¿Cuántos partidos de {self.nombre}"))
+    if partidos_in > 0:
+      print(
+          "Por favor ingrese un número positivo. No se puede viajar al pasado."
+      )
+    self.partidos += partidos_in
+
+  def actualizar_goles(
+      self
+  ):  #profe, no se por que no me pide el input cuando inicio el programa
+    goles_in = int(input(f"Cuántos goles? de {self.nombre}"))
+
+    self.goles += goles_in
+
+  def mostrar_info_total(self):
+    print(f"Jugador = {self.nombre}")
+    print(f"partidos = {self.partidos}")
+    print(f"goles = {self.goles}")
+    print(f"premios = {self.premios}")
+    print(" ")  #para que se vea más ordenado
+
+
+ñessi = jugador_de_futbol(" messi ", 13, 20, 7)
+roñaldi = jugador_de_futbol("ronaldo", 0, 0, 0)
+
+#hay alguna forma de que se auto copmplete con los objetos totales que hay en una clase? en vez de poner manualmente ñessi.actualizar_goles() ronaldo.actualizar_goles().... parece insustentable en una escala mas grande
+
+ñessi.actualizar_goles()
+ñessi.actualizar_partidos()
+ñessi.actualizar_premios()
+
+roñaldi.actualizar_goles()
+roñaldi.actualizar_partidos()
+roñaldi.actualizar_premios()
+
+ñessi.mostrar_info_total()
+roñaldi.mostrar_info_total()
